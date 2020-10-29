@@ -4,9 +4,10 @@ const timeLeft = document.querySelector('#time-left')
 let score = document.querySelector('#score')
 
 let result = 0
+let currentTime = timeLeft.textConvert
 
 function randomSquare() {
-  square.forEach(classname => {
+  square.forEach(className => {
     className.classList.remove('mole')
   })
 
@@ -25,3 +26,13 @@ square.forEach(id => {
     }
   })
 })
+
+function moveMole() {
+  let timerId = null
+  timerId = setInterval(randomSquare, 1000)
+}
+
+function countDown(){
+  currentTime--
+  timeLeft.textContent = currentTime
+}
