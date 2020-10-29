@@ -12,4 +12,16 @@ function randomSquare() {
 
   let randomPosition = square[Math.floor(Math.random() * 9)]
   randomPosition.classList.add('mole')
+
+  //assign the id of the randomPosition to HitPosition for us to use later
+  hitPosition = RandomPosition.id
 }
+
+square.forEach(id => {
+  id.addEventListener('mouseup', () => {
+    if(id.id === hitPosition){
+      result++
+      score.textContent = result
+    }
+  })
+})
