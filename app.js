@@ -35,4 +35,11 @@ function moveMole() {
 function countDown(){
   currentTime--
   timeLeft.textContent = currentTime
+
+  if(currentTime === 0){
+    clearInterval(timerId)
+    alert('GAME OVER! YOUR FINAL SCORE IS' + result)
+  }
 }
+
+let timerId = setInterval(countDown, 1000)
